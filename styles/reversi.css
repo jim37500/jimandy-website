@@ -1,0 +1,411 @@
+.page-title-container {
+    position: relative;
+  }
+  
+  .page-title {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .rule-link {
+    position: absolute;
+    right: 20%;
+    top: 25%;
+  }
+  
+  .board {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .grids {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 8px;
+    row-gap: 8px;
+    width: 600px;
+    height: 600px;
+    background-color: black;
+    justify-content: center;
+    position: relative;
+  }
+  
+  /* 結束畫面 */
+  .end-game-container {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 1;
+    display: none;
+  }
+  
+  .is-end-game .end-game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .end-game-content {
+    width: 240px;
+    height: 170px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .score-text {
+    display: flex;
+    justify-content: center;
+    font-size: 23px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .result-text {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  .reset-button {
+    background-color: orange;
+    border: 5px solid red;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 40px;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+  }
+  
+  .reset-button:hover {
+    background-color: rgb(251, 194, 87);
+    border-color: rgb(158, 0, 0);
+    color: rgb(80, 80, 80);
+  }
+  
+  .reset-button:active {
+    background-color: rgb(0, 90, 255);
+    border-color: rgb(0, 255, 255);
+    color: white;
+  }
+  
+  /* 顯示比分 */
+  .black-score-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    left: -90px;
+    padding-top: 20px;
+  }
+  
+  .black-display {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 3px solid black;
+    background-color: black;
+  }
+  
+  .white-score-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: -90px;
+    padding-top: 20px;
+  }
+  
+  .white-display {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 3px solid black;
+    background-color: white;
+  }
+  
+  .black-score,
+  .white-score {
+    font-size: 40px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .single-grid, 
+  .single-grid-dot {
+    background-color: rgb(0, 163, 0);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-width: 50px;
+    min-height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.15s;
+  }
+  
+  .single-grid:hover, 
+  .single-grid-dot:hover {
+    background-color: rgb(0, 252, 0);
+  }
+  
+  .single-grid:active, 
+  .single-grid-dot:active {
+    background-color: rgba(0, 252, 0, 0.27);
+  }
+  
+  .single-grid-dot {
+    position: relative;
+  }
+  
+  .dot {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: black;
+    position: absolute;
+    top: -16px;
+    left: -16px;
+  }
+  
+  .piece {
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+  }
+  
+  .piece-black {
+    background-color: black;
+  }
+  
+  .piece-white {
+    background-color: white;
+  }
+  
+  .turn-message {
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .turn {
+    background-color: black;
+    border: 3px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    margin-right: 10px;
+    margin-top: 4px;
+  }
+  
+  .white-turn .turn{
+    background-color: white;
+  }
+  
+  
+  @media(max-width: 850px) {
+    .grids {
+      width: 500px;
+      height: 500px;
+      column-gap: 6px;
+      row-gap: 6px;
+    }
+  
+    .dot {
+      width: 18px;
+      height: 18px;
+      top: -12px;
+      left: -12px;
+    }
+  
+    .black-display,
+    .white-display {
+      width: 50px;
+      height: 50px;
+    }
+  
+    .black-score,
+    .white-score {
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  
+    .turn-message {
+      font-size: 20px;
+    }
+  
+    .turn {
+      margin-top: 0px;
+    }
+  
+    .white-score-container {
+      right: -75px;
+    }
+  
+    .black-score-container {
+      left: -75px;
+    }
+  
+    .end-game-container {
+      width: 500px;
+      height: 500px;
+    }
+  }
+  
+  @media(max-width: 750px) {
+    .grids {
+      width: 400px;
+      height: 400px;
+      column-gap: 5px;
+      row-gap: 5px;
+    }
+  
+    .single-grid, 
+    .single-grid-dot {
+      min-width: 40px;
+      min-height: 40px;
+    }
+  
+    .dot {
+      width: 14px;
+      height: 14px;
+      top: -10px;
+      left: -10px;
+    }
+  
+    .black-display,
+    .white-display {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .black-score,
+    .white-score {
+      font-size: 25px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  
+    .turn-message {
+      font-size: 20px;
+    }
+  
+    .turn {
+      margin-top: 0px;
+    }
+  
+    .white-score-container {
+      right: -60px;
+    }
+  
+    .black-score-container {
+      left: -60px;
+    }
+  
+    .end-game-container {
+      width: 400px;
+      height: 400px;
+    }
+  }
+  
+  
+  @media(max-width: 560px) {
+    .rule-link {
+      right: 10%;
+    }
+  
+    .grids {
+      margin-top: 50px;
+    }
+  
+    .white-score-container {
+      flex-direction: row-reverse;
+      top: -80px;
+      right: 40px;
+  
+    }
+  
+    .black-score-container {
+      flex-direction: row;
+      top: -80px;
+      left: 40px;
+    }
+  
+    .white-display {
+      margin-top: 5px;
+      margin-left: 15px;
+    }
+  
+    .black-display {
+      margin-top: 5px;
+      margin-right: 15px;
+    }
+  }
+  
+  
+  @media(max-width: 450px) {
+    .rule-link {
+      right: 5%;
+    }
+  
+    .grids {
+      width: 350px;
+      height: 350px;
+      column-gap: 5px;
+      row-gap: 5px;
+    }
+  
+    .single-grid, 
+    .single-grid-dot {
+      min-width: 35px;
+      min-height: 35px;
+    }
+  
+    .dot {
+      width: 14px;
+      height: 14px;
+      top: -10px;
+      left: -10px;
+    }
+  
+    .black-display,
+    .white-display {
+      width: 35px;
+      height: 35px;
+    }
+  
+    .black-score,
+    .white-score {
+      font-size: 25px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  
+    .turn-message {
+      font-size: 20px;
+    }
+  
+    .turn {
+      margin-top: 0px;
+    }
+  
+    .end-game-container {
+      width: 400px;
+      height: 400px;
+    }
+  }
+  
+  

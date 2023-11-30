@@ -1,0 +1,17 @@
+body {
+    margin-top: 100px;
+}
+
+.logo {
+    width: 35px;
+    object-fit: contain;
+    border-radius: 100%;
+} 
+
+.profile-img {
+    max-width: 350px;
+}
+
+.list-link {
+    text-decoration: none;
+}

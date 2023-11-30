@@ -1,0 +1,897 @@
+.page-title-container {
+  position: relative;
+}
+
+.page-title {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.rule-link {
+  position: absolute;
+  right: 20%;
+  top: 25%;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  position: relative;
+  padding: 20px;
+  background-color: black;
+  margin-left: -200px;
+}
+
+
+
+/* 開始選時間畫面 */
+.choosing-time .start-game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time-choices-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+
+.time-selector-container,
+.addtime-selector-container {
+  margin-right: 15px;
+}
+
+.selector-text {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+
+.time-select {
+  font-size: 15px;
+  border: 2px solid rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+
+.confirm-time-button {
+  background-color: white;
+  border: 3px solid rgb(1, 131, 183);
+  border-radius: 20px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background-color 0.15s;
+}
+
+.confirm-time-button:hover {
+  border-color: rgb(4, 184, 255);
+}
+
+.confirm-time-button:active {
+  color: white;
+  background-color: rgb(1, 131, 183);
+}
+
+.selecting-time .time-choices-container {
+  display: flex;
+  align-items: center;
+}
+
+
+/* 結束畫面 */
+.start-game-container,
+.end-game-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+  display: none;
+}
+
+
+.game-over .end-game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: opacity-animation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+
+
+@keyframes opacity-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.end-game-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+}
+
+.result-message {
+  font-size: 30px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+
+.description-message {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: red;
+}
+
+
+.new-game-button {
+  padding: 10px;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+
+.new-game-button:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.9);
+}
+
+.new-game-button:active {
+  background-color: black;
+  color: white;
+}
+
+
+
+
+
+/* 盤外區 */
+.black-outside-container {
+  position: absolute;
+  top: -60px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.white-outside-container {
+  position: absolute;
+  bottom: -60px;
+  left: 0px;
+  right: 0px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+
+
+/* 死子 */
+.black-die-piece-container {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: 250px;
+  height: 30px;
+  padding: 5px 15px;
+}
+
+.white-die-piece-container {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 250px;
+  height: 30px;
+  padding: 5px 15px;
+}
+
+
+.dead-piece {
+  width: 22px;
+  margin-left: -10px;
+}
+
+.balance {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+/* 投降 */
+.black-surrender-container {
+  margin-left: 18px;
+  margin-right: 18px;
+  display: flex;
+  flex: 1;
+  background-color: white;
+  /* border: 3px solid black; */
+  border-radius: 10px;
+}
+
+.white-surrender-container {
+  margin-left: 18px;
+  margin-right: 18px;
+  display: flex;
+  flex: 1;
+  background-color: black;
+  color: white;
+  /* border: 3px solid white; */
+  border-radius: 10px;
+}
+
+
+.white-flag {
+  padding-top: 5px;
+  margin-left: 10px;
+  width: 40px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+
+
+
+.black-ask-surrender-container,
+.white-ask-surrender-container {
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.ask-surrender {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.surrender-yes,
+.surrender-no {
+  font-size: 16px;
+  margin-left: 3px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: margin-top 0.15s, box-shadow 0.15s;
+}
+
+.surrender-yes:hover,
+.surrender-no:hover {
+  margin-top: -3px;
+}
+
+
+.surrender-yes:active,
+.surrender-no:active {
+  box-shadow: inset 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.black-asking-surrender .black-ask-surrender-container,
+.white-asking-surrender .white-ask-surrender-container {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+
+
+
+/* 計時器 */
+.black-timer-container {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.white-timer-container {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  width: 100px;
+  border-radius: 10px;
+}
+
+.timer {
+  font-size: 25px;
+  padding: 5px 10px;
+}
+
+
+/* 時鐘 */
+.clock-container {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  cursor: pointer;
+}
+
+.clock {
+  width: 50px;
+}
+
+
+
+/* 記譜區 */
+.reveal-notation {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: -12px;
+  top: 40%;
+  bottom: 40%;
+  width: 20px;
+  background-color: olive;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: right 0.5s;
+}
+
+
+.reveal-notation:hover {
+  right: -15px;
+}
+
+.reveal-text {
+  transform: rotate(90deg);
+  letter-spacing: 5px;
+  font-size: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+
+
+.notation-block {
+  position: absolute;
+  display: none;
+  right: -215px;
+  min-height: 520px;
+  background-color: rgb(24, 24, 24);
+  border-radius: 10px;
+}
+
+
+.revealing .notation-block {
+  display: initial;
+}
+
+
+
+.notation-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 25px 75px 75px;
+  column-gap: 1px;
+  row-gap: 5px;
+  
+}
+
+
+.move-message {
+  padding-left: 3px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: black;
+  border-radius: 3px;
+  color: white;
+}
+
+
+
+
+/* 變身時不能點棋盤 */
+.invisible-barrier {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+  top: 20px;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+}
+
+
+.transforming .invisible-barrier {
+  z-index: 3;
+}
+
+
+
+/* 棋盤本身 */
+.white-single-grid,
+.black-single-grid {
+  width: 60px;
+  height: 60px;
+  border: 0.25px solid rgba(0, 0, 0, 0.1);
+  background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  position: relative;
+}
+
+
+.white-single-grid:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+
+.black-single-grid:hover {
+  background-color: rgb(235, 201, 157);
+}
+
+.white-single-grid:active,
+.black-single-grid:active {
+  background-color: lightskyblue;
+}
+
+.current-move {
+  background-color: lightskyblue !important;
+}
+
+.current-move:hover {
+  background-color: rgb(163, 218, 252) !important;
+}
+
+.current-move:active {
+  background-color: rgb(87, 191, 255) !important;
+}
+
+.previous-move {
+  background-color: lightgreen !important;
+
+}
+
+.previous-move:hover {
+  background-color: rgb(184, 250, 184) !important;
+}
+
+.previous-move:active {
+  background-color: rgb(94, 247, 94) !important;
+}
+
+
+
+.white-single-grid {
+  background-color: white;
+}
+
+
+
+.piece-img {
+  width: 95%;
+  z-index: 1;
+}
+
+
+/* 小兵變身 */
+.transform-container {
+  position: absolute;
+  display: grid;
+  background-color: rgba(0, 0, 0, 0.8);
+  column-gap: 2px;
+  row-gap: 2px;
+  padding: 3px;
+  width: 100px;
+  grid-template-columns: 1fr 1fr;
+  z-index: 100;
+  top: -70px;
+  left: -70px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.transform-choices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  transition: background-color 0.15s;
+}
+
+
+.transform-choices:hover {
+  background-color: wheat;
+}
+
+.transform-choices:active {
+  background-color: lightcoral;
+}
+
+
+.transform-img {
+  width: 90%;
+}
+
+
+.pawn-reach-end .transform-container {
+  opacity: 1;
+  pointer-events: initial;
+}
+
+
+.row-coordinate,
+.column-coordinate {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+}
+
+
+.row-coordinate {
+  bottom: -22px;
+}
+
+.column-coordinate {
+  left: -14px;
+}
+
+
+@media (max-width: 750px) {
+  .time-select {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .confirm-time-button {
+    font-size: 12px;
+  }
+
+
+  .white-single-grid,
+  .black-single-grid {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .black-die-piece-container,
+  .white-die-piece-container {
+    width: 200px;
+  }
+  
+  .dead-piece {
+    width: 18px;
+    margin-left: -8px;
+  }
+
+  .balance {
+    font-size: 12px;
+  }
+
+  .black-surrender-container, 
+  .white-surrender-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+
+
+  .ask-surrender {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+
+  .black-timer-container,
+  .white-timer-container {
+    width: 55px;
+  }
+
+
+  .timer {
+    font-size: 20px;
+  }
+
+  .notation-block {
+    min-height: 456px;
+    right: -215px;
+  }
+
+  .transform-container {
+    width: 90px;
+  }
+
+}
+
+
+@media (max-width: 670px) {
+  .time-choices-container{
+    padding: 20px;
+  }
+  
+  .board {
+    margin-left: 0px;
+  }
+
+
+  .notation-container {
+    grid-template-columns: 25px 55px 55px 25px 55px 55px 25px 55px 55px;
+  }
+
+  .move-message {
+    font-size: 12px;
+  }
+
+  .notation-block {
+    min-height: 500px;
+    bottom: -580px;
+    left: 0px;
+    right: 0px;
+  }
+
+  .clock-container {
+    top: -55px;
+    right: -50px;
+  }
+
+  .clock {
+    width: 40px;
+  }
+}
+
+@media (max-width: 550px) {
+    .page-title {
+  font-size: 30px;
+  }
+
+  .board {
+    margin-left: 0px;
+  }
+
+  .row-coordinate {
+    font-size: 12px;
+    bottom: -20px;
+  }
+
+  .column-coordinate {
+    font-size: 12px;
+  }
+
+  .white-single-grid,
+  .black-single-grid {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .black-die-piece-container,
+  .white-die-piece-container {
+    width: 200px;
+    padding: 5px 10px;
+  }
+  
+  .dead-piece {
+    width: 18px;
+    margin-left: -8px;
+  }
+
+
+  .balance {
+    font-size: 10px;
+  }
+
+
+  .ask-surrender {
+    font-size: 10px;
+  }
+
+
+  .surrender-yes,
+  .surrender-no {
+    font-size: 8px;
+    
+  }
+
+  .timer {
+    font-size: 15px;
+  }
+
+  .black-surrender-container, 
+  .white-surrender-container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+
+  .white-flag {
+    width: 30px;
+  }
+
+  .black-ask-surrender-container,
+  .white-ask-surrender-container {
+    padding: 5px;
+  }
+
+  .ask-surrender {
+    font-size: 10px;
+  }
+
+  .black-timer-container,
+  .white-timer-container {
+    width: 50px;
+  }
+
+  .notation-container {
+    grid-template-columns: 25px 55px 55px 25px 55px 55px;
+  }
+
+  .move-message {
+    font-size: 10px;
+  }
+
+  .notation-block {
+    min-height: 700px;
+    bottom: -770px;
+    left: 0px;
+    right: 60px;
+  }
+
+  .transform-container {
+    width: 80px;
+  }
+
+  .clock-container {
+    top: 450px;
+    right: 10px;
+  }
+
+  .reveal-notation {
+    top: 38%;
+    bottom: 38%;
+  }
+}
+
+@media (max-width: 425px) {
+  .page-title {
+    font-size: 25px;
+  }
+
+  .time-choices-container {
+    padding: 15px;
+  }
+
+  .time-select {
+    padding: 5px;
+  }
+
+  .white-single-grid,
+  .black-single-grid {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .black-die-piece-container,
+  .white-die-piece-container {
+    width: 200px;
+    padding: 5px 10px;
+  }
+  
+  .dead-piece {
+    width: 12px;
+    margin-left: -6px;
+  }
+
+
+  .balance {
+    font-size: 8px;
+  }
+
+
+  .ask-surrender {
+    font-size: 10px;
+  }
+
+
+  .surrender-yes,
+  .surrender-no {
+    font-size: 8px;
+    
+  }
+
+  .timer {
+    font-size: 13px;
+  }
+
+  .black-surrender-container, 
+  .white-surrender-container {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+
+
+  .white-flag {
+    padding-top: 0px;
+    width: 20px;
+  }
+
+
+  .black-timer-container,
+  .white-timer-container {
+    width: 40px;
+  }
+
+  .notation-container {
+    grid-template-columns: 25px 60px 60px;
+  }
+
+
+  .notation-block {
+    min-height: 1400px;
+    bottom: -1470px;
+    left: 50px;
+    right: 70px;
+  }
+
+  .transform-container {
+    width: 80px;
+  }
+
+  .clock-container {
+    top: 370px;
+    right: 10px;
+  }
+
+  .reveal-notation {
+    top: 34%;
+    bottom: 34%;
+  }
+
+  .description-message {
+    font-size: 15px;
+  }
+}
+
+
+
+
