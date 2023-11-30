@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dark of chess chess</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <link href="styles/homepage.css" rel="stylesheet">
+  <link href="styles/chinese-chess.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-dark px-3 fixed-top" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/JimAndy.png" class="logo" alt="Logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link" aria-current="page" href="gallery.html">Gallery</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="body container">
+    <div class="page-title-container mb-3">
+      <div class="page-title">Dark of Chess Chess
+        <span class="mx-3">
+          <a class="btn btn-primary" href="https://zh.wikipedia.org/zh-tw/%E6%9A%97%E6%A3%8B" target="_blank">Rules</a>
+        </span>
+      </div>
+    </div>
+    <div class="main">
+  
+      
+      <!-- 棋盤 -->
+      <div class="board js-board">
+  
+        <!-- 左方殘子 -->
+        <div class="left-die-piece2" id="js-left-die-piece2">
+          <img class="invisible-img" src="images/chinese-chess/unfold.png">
+        </div>
+  
+        <div class="left-die-piece1" id="js-left-die-piece1">
+          <img class="invisible-img" src="images/chinese-chess/unfold.png">
+        </div>
+  
+        <!-- 右方殘子 -->
+        <div class="right-die-piece1" id="js-right-die-piece1">
+          <img class="invisible-img" src="images/chinese-chess/unfold.png">
+        </div>
+  
+        <div class="right-die-piece2" id="js-right-die-piece2">
+          <img class="invisible-img" src="images/chinese-chess/unfold.png">
+        </div>
+  
+        <!-- 結束畫面 -->
+        <div class="end-game-container">
+          <div class="end-game-content">
+            <div class="result-message js-result-message"></div>
+            <button class="new-game-button js-new-game-button">New Game</button>
+          </div>
+        </div>
+  
+  
+        <!-- 王頭像 -->
+        <div class="black-king-icon-container js-black-king-icon-container">
+          <div class="black-ask-surrender-container js-black-ask-surrender-container">
+            <div class="ask-surrender">
+              Surrender?
+            </div>
+            <button class="surrender-yes js-black-surrender-yes">Yes</button>
+            <button class="surrender-no js-black-surrender-no">No</button>
+          </div>
+          <div class="surrender-container js-black-surrender-container">
+            <img class="surrender-img" src="images/chinese-chess/black-surrender.png">
+          </div>
+          <img class="king-icon" src="images/chinese-chess/black-king.png">
+          <img class="black-arrow-icon1" src="images/chinese-chess/black-arrow.png">
+          <img class="black-arrow-icon2" src="images/chinese-chess/black-arrow.png">
+        </div>
+  
+        <div class="red-king-icon-container js-red-king-icon-container">
+          <img class="red-arrow-icon2" src="images/chinese-chess/red-arrow.png">
+          <img class="red-arrow-icon1" src="images/chinese-chess/red-arrow.png">
+          <img class="king-icon" src="images/chinese-chess/red-king.png">
+          <div class="surrender-container js-red-surrender-container">
+            <img class="surrender-img" src="images/chinese-chess/red-surrender.png">
+          </div>
+          <div class="red-ask-surrender-container js-red-ask-surrender-container">
+            <div class="ask-surrender">
+              Surrender?
+            </div>
+            <button class="surrender-yes js-red-surrender-yes">Yes</button>
+            <button class="surrender-no js-red-surrender-no">No</button>
+          </div>
+        </div>
+        <!-- Row1 -->
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-top-v"></div>
+          <div class="decoration-right-top-h"></div>
+          <img class="piece-img" id="js-piece-img00">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-top-v"></div>
+          <div class="decoration-left-top-h"></div>
+          <img class="piece-img" id="js-piece-img01">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-top-v"></div>
+          <div class="decoration-right-top-h"></div>
+          <img class="piece-img" id="js-piece-img02">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-top-v"></div>
+          <div class="decoration-left-top-h"></div>
+          <img class="piece-img" id="js-piece-img03">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-top-v"></div>
+          <div class="decoration-right-top-h"></div>
+          <img class="piece-img" id="js-piece-img04">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-top-v"></div>
+          <div class="decoration-left-top-h"></div>
+          <img class="piece-img" id="js-piece-img05">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-top-v"></div>
+          <div class="decoration-right-top-h"></div>
+          <img class="piece-img" id="js-piece-img06">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-top-v"></div>
+          <div class="decoration-left-top-h"></div>
+          <img class="piece-img" id="js-piece-img07">
+        </div>
+  
+        <!-- Row2 -->
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-top-v"></div>
+          <div class="decoration-left-top-h"></div>
+          <div class="decoration-right-bottom-v"></div>
+          <div class="decoration-right-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img10">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-top-v"></div>
+          <div class="decoration-right-top-h"></div>
+          <div class="decoration-left-bottom-v"></div>
+          <div class="decoration-left-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img11">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-bottom-v"></div>
+          <div class="decoration-right-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img12">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-bottom-v"></div>
+          <div class="decoration-left-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img13">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-bottom-v"></div>
+          <div class="decoration-right-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img14">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-bottom-v"></div>
+          <div class="decoration-left-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img15">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-top-v"></div>
+          <div class="decoration-left-top-h"></div>
+          <div class="decoration-right-bottom-v"></div>
+          <div class="decoration-right-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img16">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-top-v"></div>
+          <div class="decoration-right-top-h"></div>
+          <div class="decoration-left-bottom-v"></div>
+          <div class="decoration-left-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img17">
+        </div>
+  
+        <!-- Row3 -->
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-bottom-v"></div>
+          <div class="decoration-left-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img20">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-bottom-v"></div>
+          <div class="decoration-right-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img21">
+        </div>
+        <div class="single-grid js-single-grid">
+          <img class="piece-img" id="js-piece-img22">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <img class="piece-img" id="js-piece-img23">
+          <div class="diagonal"></div>
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="diagonal-n"></div>
+          <img class="piece-img" id="js-piece-img24">
+        </div>
+        <div class="single-grid js-single-grid">
+          <img class="piece-img" id="js-piece-img25">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-left-bottom-v"></div>
+          <div class="decoration-left-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img26">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="decoration-right-bottom-v"></div>
+          <div class="decoration-right-bottom-h"></div>
+          <img class="piece-img" id="js-piece-img27">
+        </div>
+  
+        <!-- Row4 -->
+        <div class="single-grid js-single-grid">
+          <img class="piece-img" id="js-piece-img30">
+        </div>
+        <div class="single-grid js-single-grid">
+          <img class="piece-img" id="js-piece-img31">
+        </div>
+        <div class="single-grid js-single-grid">
+          <img class="piece-img" id="js-piece-img32">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="diagonal-n"></div>
+          <img class="piece-img" id="js-piece-img33">
+        </div>
+        <div class="single-grid style-grid js-single-grid">
+          <div class="diagonal"></div>
+          <img class="piece-img" id="js-piece-img34">
+        </div>
+        <div class="single-grid js-single-grid">
+          <img class="piece-img" id="js-piece-img35">
+        </div>
+        <div class="single-grid js-single-grid">
+          <img class="piece-img" id="js-piece-img36">
+        </div>
+        <div class="single-grid js-single-grid">
+          <img class="piece-img" id="js-piece-img37">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="scripts/chinese-chess.js"></script>
+</body>
+</html>
